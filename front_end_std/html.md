@@ -1,6 +1,6 @@
-# HTML规范
+# HTML编码规范
 
-## 一、 模板规范
+## 一、模板规范
 ### PC页面模板
 1. 指定文档类型（推荐使用 HTML5 的文档类型申明： &lt;!DOCTYPE html&gt;）
 2. 指定文档编码为utf-8
@@ -47,49 +47,70 @@
 ### 移动页面模板
 待完善...（部分可参考PC页面模板）
 
-## 二、 书写规范
-* 统一采用 __四个空格__ （或一个tab操作）作为代码缩进规范；
-* 分块注释，推荐两种注释写法：
+## 二、书写规范
+### 1. 缩进与换行
+统一采用`4个空格`作为一个代码缩进层级，不允许使用`2个空格`；
 ```html
-<!-- 注释规范一： -->
-<!-- 头部 -->
-<div class="header">
-    此处省略100行...
-</div>  <!-- /头部 -->
-<!-- 底部 -->
-<div class="footer">
-    此处省略100行...
-</div>  <!-- /底部 -->
-
-<!-- 注释规范二： -->
-<!-- 头部 start -->
-<div class="header">
-    此处省略100行...
-</div>  <!-- 头部 end -->
-<!-- 底部 start -->
-<div class="footer">
-    此处省略100行...
-</div>  <!-- 底部 end -->
-```
-* 无内容元素 __空标签不要闭合__：
-```html
-<br> <hr>  <!-- 推荐 -->
-<br /> <hr />  <!-- 不推荐 -->
-```
-* 使用 __双引号__ （""） 而不是单引号（''）:
-```html
-<div class="hot-news">...</div>  <!-- 推荐 -->
-<div class='hot-news'>...</div>  <!-- 不推荐 -->
+<ul class="news-list">
+    <li class="news-item">...</li>
+    <li class="news-item">...</li>
+</ul>
 ```
 
+### 2. 命名
+* `class`必须单词全字母小写，单词间以中横线`-`分隔（为了方便代码阅读与维护,用于js操作的class，建议新增一个以`J-`开头作为class名，该class只用于js操作）;
+* `id`建议单词全字母小写，单词间以下划线`_`分隔，（为了方便代码阅读与维护,用于js操作的id，建议以`J_`开头作为id名）。  
+```html
+<!-- J_news_list：用于js业务逻辑操作 -->
+<ul id="J_news_list" class="news-list">
+    <li class="news-item">...</li>
+    <li class="news-item">...</li>
+</ul>
 
-## 三、 标签语义化
-在编写html过程中，尽量做到标签语义化，标签语义化主要有以下好处：
+<!-- J-news-list：用于js业务逻辑操作； news-list：用于样式 -->
+<ul class="J-news-list news-list">
+    <li class="news-item">...</li>
+    <li class="news-item">...</li>
+</ul>
+```
 
-* 利于SEO（搜索引擎会根据标签的语义确定上下文和权重问题）
-* 去掉样式或者样式丢失时页面结构依然清晰分明
+* `class`必须代表相应模块或部件的内容或功能，不得以样式信息进行命名。  
+```html
+<!-- Good -->
+<div class="warn"></div>
+<div class="sidebar"></div>
 
-__开发过程中一定要尽量根据上下文语义来选择语义化标签__，常用的语义化标签有：
+<!-- Bad -->
+<div class="red"></div>
+<div class="left"></div>
+```
+
+### 3. 标签
+* 标签名必须使用小写字母。
+```html
+<!-- Good -->
+<div>lowercase</div>
+
+<!-- Bad -->
+<DIV>upcase</DIV>
+```
+
+* 空标签不要闭合（`input`  `br`  `img`  `hr`）
+```html
+<!-- Good -->
+<br> <hr>  
+
+<!-- Bad -->
+<br /> <hr />  
+```
+
+* 标签尽量简洁，不添加不必要的标签。
+* 在CSS布局可以实现相同需求的情况下，不要使用表格进行布局。  
+
+* HTML 标签的使用应该遵循标签的语义（`开发过程中一定要尽量根据上下文语义来选择语义化标签`），标签语义化主要有以下好处：
+`1. 利于SEO（搜索引擎会根据标签的语义确定上下文和权重问题）。`
+`2. 去掉样式或者样式丢失时页面结构依然清晰分明。`  
+常用的语义化标签有：  
 
 | 标签 | 描述 |
 |:-------:|:---------|
@@ -120,6 +141,56 @@ __开发过程中一定要尽量根据上下文语义来选择语义化标签__�
 | del | 文档中已被删除的文本。 |
 
 > __注意__：如果是开发针对高版本浏览器的项目或者是开发移动端项目，可以使用html5新增的语义化更好的标签（如：header、footer、article、aside、section、hgroup、nav、figure等）。
+
+## 属性
+* 属性名必须使用`小写字母`。
+* 属性值必须用双引号（`""`）包围。
+```html
+<!-- Good -->
+<div class="hot-news">...</div>  
+
+<!-- Bad -->
+<div class='hot-news'>...</div>  
+```
+
+* 布尔类型的属性，建议不添加属性值。
+```html
+<input type="text" disabled>
+<input type="checkbox" value="checkbox" checked>
+```
+
+* 自定义属性建议以`xxx-`为前缀，推荐使用`data-`。
+```html
+<img src="xxx.png" alt="test img" data-width="400" data-height="300">
+```
+
+* 分块注释，推荐两种注释写法：
+```html
+<!-- 注释规范一： -->
+<!-- 头部 -->
+<div class="header">
+    此处省略100行...
+</div>  <!-- /头部 -->
+<!-- 底部 -->
+<div class="footer">
+    此处省略100行...
+</div>  <!-- /底部 -->
+
+<!-- 注释规范二： -->
+<!-- 头部 start -->
+<div class="header">
+    此处省略100行...
+</div>  <!-- 头部 end -->
+<!-- 底部 start -->
+<div class="footer">
+    此处省略100行...
+</div>  <!-- 底部 end -->
+```
+
+
+
+
+
 
 
 
