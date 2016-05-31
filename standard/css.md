@@ -349,7 +349,7 @@ body {
 ```
 
 ## 三、 命名规则
-* 尽量使用 `英文单词` 命名（如：header、footer、nav、hot-news、news-list等）， `避免使用汉语拼音` 命名（如：toubu、dibu、daohang、xinwen、liebiao等），下面列出了常用名称：
+尽量使用 `英文单词` 命名（如：header、footer、nav、hot-news、news-list等）， `避免使用汉语拼音` 命名（如：toubu、dibu、daohang、xinwen、liebiao等），下面列出了常用名称：
 
 | 单词 | 意义 |
 |:-------|:---------|
