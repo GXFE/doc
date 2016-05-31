@@ -21,7 +21,7 @@
 4. item4
 
 ## 图片
-![图片而已](./img/md.png)
+![图片而已](../resources/img/md.png)
 
 ## 链接
 [这是一个链接](http://toutiao.eastday.com)
@@ -63,5 +63,13 @@ __这是粗体文字__
 // 这是一段javascript代码
 function $(str){
     return document.getElementById(str);
+}
+```
+
+```css
+/* 这是一段css */
+.selector{
+    color: red;
+    font-size: 16px;
 }
 ```
