@@ -10,7 +10,7 @@ html,body {background-image: url(about:blank); background-attachment: fixed;}
 body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, fieldset, lengend, button, input, textarea, th, td {margin: 0; padding: 0; outline: 0;} /* 清除内外边距 */
 :focus{outline: 0 none; font-weight: normal;}
 body{min-width: 1000px; min-height: 100%;}
-body, button, input, select, textarea {font: 14px/100% "Hiragino Sans GB","Hiragino Sans GB W3","Microsoft Yahei",\5b8b\4f53,"宋体",arial,sans-serif;} /* 设置默认字体 */
+body, button, input, select, textarea { font: 14px/1 "Helvetica Neue", Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft YaHei", SimSun, sans-serif; } /* 设置默认字体 */
 h1,h2,h3,h4,h5,h6 {font-size: 1em;}
 iframe,img {border: 0 none;}
 em,i,ins {font-style: normal; text-decoration: none}
