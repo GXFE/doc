@@ -22,6 +22,8 @@
     <meta name="keywords" content="关键词">　
     <!-- 网站描述 -->
     <meta name="description" content="描述信息">　
+    <!-- 作者信息 -->
+    <meta name="author" content="lizhigao">
     <!-- 网站标题 -->
     <title>首页</title>　
     <!-- 基础样式（reset等） -->
@@ -41,6 +43,10 @@
     <script src="js/jquery-1.12.4.min.js"></script>
     <!-- 页面js业务逻辑 -->
     <script src="js/page_index.js"></script>
+
+    <div style="display: none">
+        <!-- 统计代码 -->
+    </div>
 </body>
 </html>
 ```
@@ -50,6 +56,7 @@
 ## 二、书写规范
 ### 1. 缩进与换行
 统一采用`4个空格`作为一个代码缩进层级，不允许使用`2个空格`；
+
 ```html
 <ul class="news-list">
     <li class="news-item">...</li>
@@ -59,7 +66,8 @@
 
 ### 2. 命名
 * `class`必须单词全字母小写，单词间以中横线`-`分隔（为了方便代码阅读与维护,用于js操作的class，建议新增一个以`J-`开头作为class名，该class只用于js操作）;
-* `id`建议单词全字母小写，单词间以下划线`_`分隔，（为了方便代码阅读与维护,用于js操作的id，建议以`J_`开头作为id名）。  
+* `id`建议单词全字母小写，单词间以下划线`_`分隔，（为了方便代码阅读与维护,用于js操作的id，建议以`J_`开头作为id名）。(经过讨论，根据自己习惯，ID也可以选用Camel命名法（如：newsList）)
+
 ```html
 <!-- J_news_list：用于js业务逻辑操作 -->
 <ul id="J_news_list" class="news-list">
